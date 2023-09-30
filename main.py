@@ -12,10 +12,8 @@ def main():
     parser.add_argument(
         "--load", action="store_true", help="Perform data transformation and loading"
     )
-    parser.add_argument(
-        "--query", action="store_true", help="Perform data querying"
-    )
-   
+    parser.add_argument("--query", action="store_true", help="Perform data querying")
+
     args = parser.parse_args()
 
     if args.extract:
@@ -29,6 +27,7 @@ def main():
     if args.query:
         print("Querying data...")
         query()
+
 
 if __name__ == "__main__":
     main()
