@@ -25,4 +25,4 @@ run:
 extract:
     python your_script.py --extract
 		
-all: install lint test format extract
+all: install lint test format
