@@ -21,5 +21,8 @@ refactor: format lint
 
 run:
 	python main.py
+
+extract:
+    python your_script.py --extract
 		
-all: install lint test format
+all: install lint test format extract
