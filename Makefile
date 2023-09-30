@@ -30,5 +30,12 @@ transform_load:
 
 query:
 	python main.py --query
+
+generate_and_push:
+			python main.py --generate_and_push
+
+deploy:
+	#extract, transform, load, query
+	python -m main --extract --load --query
 		
 all: install lint test format
