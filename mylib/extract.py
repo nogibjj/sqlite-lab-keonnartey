@@ -4,7 +4,7 @@ JSON or CSV formats tend to work well
 """
 
 import requests
-
+import os
 
 def extract(
     url="https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv",
