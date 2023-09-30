@@ -23,6 +23,6 @@ run:
 	python main.py
 
 extract:
-    python your_script.py --extract
+	python your_script.py --extract
 		
 all: install lint test format
