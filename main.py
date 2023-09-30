@@ -5,7 +5,7 @@ from mylib.query import query
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Extract, transform, and query data, generate and push")
+    parser = argparse.ArgumentParser(description="Extract, transform, and query data")
     parser.add_argument(
         "--extract", action="store_true", help="Perform data extraction"
     )
