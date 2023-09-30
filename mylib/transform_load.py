@@ -8,19 +8,20 @@ import csv
 import os
 
 #load the csv file and insert into a new sqlite3 database
-def load(dataset="/workspaces/sqlite-lab-keonnartey/data/GroceryDB_IgFPro.csv"):
+def load(dataset="/workspaces/sqlite-lab-keonnartey/data/Diabetes.csv"):
     """"Transforms and Loads data into the local SQLite3 database"""
 
     #prints the full working directory and path
     print(os.getcwd())
     payload = csv.reader(open(dataset, newline=''), delimiter=',')
-    conn = sqlite3.connect('GroceryDB.db')
+    next(payload)
+    conn = sqlite3.connect('DiabetesDB.db')
     c = conn.cursor()
-    c.execute("DROP TABLE IF EXISTS GroceryDB")
-    c.execute("CREATE TABLE GroceryDB (id,general_name, count_products, ingred_FPro, avg_FPro_products, avg_distance_root, ingred_normalization_term, semantic_tree_name, semantic_tree_node)")
+    c.execute("DROP TABLE IF EXISTS DiabetesDB")
+    c.execute("CREATE TABLE DiabetesDB (Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age,Outcome)")
     #insert
-    c.executemany("INSERT INTO GroceryDB VALUES (?,?, ?, ?, ?, ?, ?, ?, ?)", payload)
+    c.executemany("INSERT INTO DiabetesDB VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", payload)
     conn.commit()
     conn.close()
-    return "GroceryDB.db"
+    return "DiabetesDB.db"
 
