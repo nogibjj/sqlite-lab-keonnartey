@@ -26,6 +26,6 @@ extract:
 	python main.py --extract
 
 transform_load:
-		python main.py --transform_load
+		python main.py --load
 		
 all: install lint test format
