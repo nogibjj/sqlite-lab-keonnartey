@@ -15,10 +15,7 @@ def main():
     parser.add_argument(
         "--query", action="store_true", help="Perform data querying"
     )
-    parser.add_argument(
-        '--generate_and_push', action='store_true', help="Generate and push data"
-    )
-
+   
     args = parser.parse_args()
 
     if args.extract:
@@ -32,11 +29,6 @@ def main():
     if args.query:
         print("Querying data...")
         query()
-
-    if args.generate_and_push:
-    # Add your code for generating and pushing data here
-        print("Generating and pushing data...")
-        generate_and_push()
 
 if __name__ == "__main__":
     main()
