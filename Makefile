@@ -27,5 +27,8 @@ extract:
 
 transform_load:
 		python main.py --load
+
+query:
+	python main.py --query
 		
 all: install lint test format
