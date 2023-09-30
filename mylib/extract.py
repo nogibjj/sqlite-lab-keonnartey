@@ -11,6 +11,9 @@ def extract(
     file_path="/data/Diabetes.csv",
     directory="data"
 ):
+    directory = '/data/'
+    os.makedirs(directory, exist_ok=True)
+    file_path = os.path.join(directory, 'Diabetes.csv')
     """Extract a url to a file path"""
     if not os.path.exists(directory):
         os.makedirs(directory)
