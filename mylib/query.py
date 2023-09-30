@@ -12,5 +12,3 @@ def query():
     print(cursor.fetchall())
     conn.close()
     return "Success"
-
-
