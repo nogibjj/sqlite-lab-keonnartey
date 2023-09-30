@@ -1,8 +1,3 @@
-"""
-Extract a dataset from a URL like Kaggle or data.gov. 
-JSON or CSV formats tend to work well
-"""
-
 import requests
 import os
 
@@ -11,13 +6,29 @@ def extract(
     file_path="/data/Diabetes.csv",
     directory="data"
 ):
-    directory = '/data/'
+    # Ensure the directory exists
     os.makedirs(directory, exist_ok=True)
-    file_path = os.path.join(directory, 'Diabetes.csv')
-    """Extract a url to a file path"""
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-    with requests.get(url) as r:
-        with open(file_path, "wb") as f:
-            f.write(r.content)
-    return file_path
+    
+    # Join the directory and file name to get the full path
+    full_file_path = os.path.join(directory, 'Diabetes.csv')
+    
+    # Check if the file already exists
+    if os.path.exists(full_file_path):
+        print(f"File '{full_file_path}' already exists.")
+        return full_file_path
+
+    # Fetch the content from the URL
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        # Write the content to the file
+        with open(full_file_path, "wb") as f:
+            f.write(response.content)
+        print(f"File '{full_file_path}' extracted successfully.")
+    else:
+        print(f"Failed to fetch content from URL. Status code: {response.status_code}")
+    
+    return full_file_path
+
+# Example usage
+extract()
