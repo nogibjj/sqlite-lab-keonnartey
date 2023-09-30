@@ -8,7 +8,7 @@ import requests
 
 def extract(
     url="https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv",
-    file_path="data/Diabetes.csv",
+    file_path="/workspaces/sqlite-lab-keonnartey/data/Diabetes.csv",
 ):
     """ "Extract a url to a file path"""
     with requests.get(url) as r:
