@@ -1,5 +1,5 @@
 import requests
-import os
+# import os
 
 def extract(
     url="https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv",
@@ -33,7 +33,8 @@ def extract(
 #             f.write(response.content)
 #         print(f"File '{full_file_path}' extracted successfully.")
 #     else:
-#         print(f"Failed to fetch content from URL. Status code: {response.status_code}")
+#         print(f"Failed to fetch content from URL. Status code:
+# was on top {response.status_code}")
     
 #     return full_file_path
 
