@@ -19,7 +19,5 @@ container-lint:
 
 refactor: format lint
 
-extract:
-	python main.py Diabetes.csv
 
 all: install lint test format
