@@ -20,6 +20,6 @@ container-lint:
 refactor: format lint
 
 extract:
-	make extract QUERY_STRING="query_string"
+	python main.py query_string
 
 all: install lint test format
