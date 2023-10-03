@@ -22,13 +22,4 @@ refactor: format lint
 run:
 	python main.py
 
-extract:
-	python main.py
-
-transform_load:
-		python main.py 
-
-query:
-	python main.py
-		
 all: install lint test format
