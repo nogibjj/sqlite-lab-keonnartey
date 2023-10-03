@@ -19,4 +19,7 @@ container-lint:
 
 refactor: format lint
 
+extract:
+	python main.py
+
 all: install lint test format
