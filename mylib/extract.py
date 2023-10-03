@@ -4,7 +4,7 @@ import requests
 def extract(
     url="https://raw.githubusercontent.com/plotly/datasets/master/diabetes.csv",
     file_path="data/Diabetes.csv",
-    #directory="data"
+    directory="data"
 ):
     
 
