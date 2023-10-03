@@ -20,6 +20,6 @@ container-lint:
 refactor: format lint
 
 extract:
-	python main.py query_string
+	python main.py /workspaces/sqlite-lab-keonnartey/Diabetes.csv
 
 all: install lint test format
