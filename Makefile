@@ -23,32 +23,12 @@ run:
 	python main.py
 
 extract:
-	python main.py --extract
+	python main.py
 
 transform_load:
-		python main.py --load
+		python main.py 
 
 query:
-	python main.py --query
-
-deploy:
-	#extract, transform, load, query
-	python -m main --extract --load --query
-
-generate_and_push:
-
-	# Create the markdown file 
-	python test_main.py  # Replace with the actual command to generate the markdown
-
-	# Add, commit, and push the generated files to GitHub
-	@if [ -n "$$(git status --porcelain)" ]; then \
-		git config --local user.email "action@github.com"; \
-		git config --local user.name "GitHub Action"; \
-		git add .; \
-		git commit -m "Add SQL log"; \
-		git push; \
-	else \
-		echo "No changes to commit. Skipping commit and push."; \
-	fi
+	python main.py
 		
 all: install lint test format
